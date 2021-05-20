@@ -1,0 +1,12 @@
+main: me.moravak.back.Main
+api-version: 1.13
+name: BackTeleport
+version: 1.0.0
+description: Simple back plugin
+commands:
+  back:
+    description: teleports you to latest location
+    usage: /back
+  backinfo:
+    description: shows info about back location
+    usage: /backinfo
