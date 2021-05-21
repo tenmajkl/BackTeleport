@@ -7,28 +7,30 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
-public class Events implements Listener
-{
+public class Events implements Listener {
+
+    private final Locations locations;
+
+    public Events(Locations locations) {
+        this.locations = locations;
+    }
+
     @EventHandler
-    public void onTeleport(PlayerTeleportEvent event)
-    {
+    public void onTeleport(PlayerTeleportEvent event) {
         Player player = event.getPlayer();
         String name = player.getName();
         Location location = event.getFrom();
 
-        Locations.setLocation(name, location);
-
+        locations.setLocation(name, location);
     }
 
     @EventHandler
-    public void onDeath(PlayerDeathEvent event)
-    {
+    public void onDeath(PlayerDeathEvent event) {
         Player player = event.getEntity();
         String name = player.getName();
         Location location = player.getLocation();
 
-        Locations.setLocation(name, location);
-
+        locations.setLocation(name, location);
     }
 
 }
