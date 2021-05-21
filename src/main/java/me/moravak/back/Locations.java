@@ -4,18 +4,20 @@ import org.bukkit.Location;
 
 import java.util.HashMap;
 
-public class Locations
-{
-    private static HashMap<String, Location> locations = new HashMap<String, Location>();
+public class Locations {
 
-    public static Location getLocation(String playerName)
-    {
+    private final HashMap<String, Location> locations;
+
+    public Locations() {
+        this.locations = new HashMap<>();
+    }
+
+    public Location getLocation(String playerName) {
         Location location = locations.get(playerName);
         return location;
     }
 
-    public static void setLocation(String playerName, Location location)
-    {
+    public void setLocation(String playerName, Location location) {
         locations.put(playerName, location);
     }
 
